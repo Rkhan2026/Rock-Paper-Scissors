@@ -12,6 +12,8 @@ function getComputerChoice() {
 }
 
 var playerSelect = prompt("Enter Choice");
+var lcrp = playerSelect.toLowerCase();
+playerSelect = lcrp;
 var computerSelect = getComputerChoice();
 
 function playRound(playerSelect, computerSelect) {
