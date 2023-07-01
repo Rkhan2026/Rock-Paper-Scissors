@@ -29,7 +29,7 @@ function playRound(playerSelect, computerSelect) {
     } if (playerSelect=="rock" && computerSelect=="paper") {
         console.log("You Lose! Paper beats Rock"); cscore++;
     } else if (playerSelect=="scissors" && computerSelect=="rock") {
-        console.log("You Lose! Rock beats Scissors"); cscore++:
+        console.log("You Lose! Rock beats Scissors"); cscore++;
     } else if (playerSelect=="paper" && computerSelect=="scissors") {
         console.log("You Lose! Scissors beats paper"); cscore++;
     }
