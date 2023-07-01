@@ -12,7 +12,7 @@ function getComputerChoice() {
 }
 
 var playerSelect = prompt("Enter Choice");
-var computerSelect = "rock";
+var computerSelect = getComputerChoice();
 
 function playRound(playerSelect, computerSelect) {
     if (playerSelect=="paper" && computerSelect=="rock") {
