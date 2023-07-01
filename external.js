@@ -1,16 +1,18 @@
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3);
+    var val;
     if (choice == 0){
-        return "rock";
+        val="rock";
     } else if (choice == 1){
-        return "paper";
-    } else if(choice == 2){
-        return "scissors";
+        val="paper";
+    } else if (choice == 2){
+        val="scissors";
     }
+    return val;
 }
 
-let playerSelect = prompt("Enter Choice");
-let computerSelect = getComputerChoice();
+var playerSelect = prompt("Enter Choice");
+var computerSelect = "rock";
 
 function playRound(playerSelect, computerSelect) {
     if (playerSelect=="paper" && computerSelect=="rock") {
@@ -21,3 +23,5 @@ function playRound(playerSelect, computerSelect) {
         console.log("You win! Scissors beats paper");
   }
 }
+
+playRound(playerSelect,computerSelect);
