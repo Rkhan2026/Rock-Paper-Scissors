@@ -11,49 +11,65 @@ function getComputerChoice() {
     return val;
 }
 
-var pscore=0; var cscore=0;
+var pscore=0; var cscore=0; 
 
 function playRound(playerSelect, computerSelect) {
-    if (playerSelect=="paper" && computerSelect=="rock") {
-        console.log("You win! Paper beats Rock"); pscore++;
-    } else if (playerSelect=="rock" && computerSelect=="scissors") {
-        console.log("You win! Rock beats Scissors"); pscore++;
-    } else if (playerSelect=="scissors" && computerSelect=="paper") {
-        console.log("You win! Scissors beats paper"); pscore++;
-    } if (playerSelect=="paper" && computerSelect=="paper") {
-        console.log("It's A Tie");
-    } else if (playerSelect=="rock" && computerSelect=="rock") {
-        console.log("It's A Tie");
-    } else if (playerSelect=="scissors" && computerSelect=="scissors") {
-        console.log("It's A Tie");
-    } if (playerSelect=="rock" && computerSelect=="paper") {
-        console.log("You Lose! Paper beats Rock"); cscore++;
-    } else if (playerSelect=="scissors" && computerSelect=="rock") {
-        console.log("You Lose! Rock beats Scissors"); cscore++;
-    } else if (playerSelect=="paper" && computerSelect=="scissors") {
-        console.log("You Lose! Scissors beats paper"); cscore++;
-    }
+  
+        if (playerSelect=="paper" && computerSelect=="rock") {
+            pscore++; 
+        } else if (playerSelect=="rock" && computerSelect=="scissors") {
+            pscore++; 
+        } else if (playerSelect=="scissors" && computerSelect=="paper") {
+            pscore++; 
+        } else if (playerSelect=="paper" && computerSelect=="paper") {
+            
+        } else if (playerSelect=="rock" && computerSelect=="rock") {
+            
+        } else if (playerSelect=="scissors" && computerSelect=="scissors") {
+            
+        } else if (playerSelect=="rock" && computerSelect=="paper") {
+            cscore++; 
+        } else if (playerSelect=="scissors" && computerSelect=="rock") {
+            cscore++; 
+        } else if (playerSelect=="paper" && computerSelect=="scissors") {
+            cscore++;
+        }
+        document.getElementById("Pchoice").textContent=`Player Selected : ${playerSelect}`;
+        document.getElementById("Cchoice").textContent=`Computer Selected : ${computerSelect}`;
+        document.getElementById("player-score").textContent=`Player Score : ${pscore}`;
+        document.getElementById("comp-score").textContent=`Computer Score : ${cscore}`;
+        if (pscore==5) {
+            document.getElementById("final-result").textContent="The Winner Is : Player";
+        } else if (cscore==5) {
+            document.getElementById("final-result").textContent="The Winner Is : Computer";
+        }
+
+        
 }
 
-function game() {
-    var playerSelect = prompt("Enter Choice");
-    var lcrp = playerSelect.toLowerCase();
-    playerSelect = lcrp;
-    var computerSelect = getComputerChoice();
-    playRound(playerSelect,computerSelect);
-}
 
-game();
-game();
-game();
-game();
-game();
+document.getElementById("reset").addEventListener('click', function ()
+{
+     pscore=0;cscore=0;
+     document.getElementById("final-result").textContent="The Winner Is : ";
+     document.getElementById("final-result").textContent="The Winner Is : ";
+     document.getElementById("player-score").textContent=`Player Score : ${pscore}`;
+     document.getElementById("comp-score").textContent=`Computer Score : ${cscore}`;
+}); 
 
-if (pscore>cscore) {
-    console.log("Player Wins Against Computer");
-} else if (cscore>pscore) {
-    console.log("Computer Wins Against Player");
-} else if (cscore==pscore) {
-    console.log("Tie Between Player And Computer");
-} 
+
+document.getElementById("rock").addEventListener('click', function ()
+{
+     playRound("rock", getComputerChoice());
+}); 
+
+document.getElementById("paper").addEventListener('click', function ()
+{
+    playRound("paper", getComputerChoice());
+}); 
+
+document.getElementById("scissors").addEventListener('click', function () 
+{
+    playRound("scissors", getComputerChoice());
+});  
 
