@@ -51,10 +51,12 @@ function playRound(playerSelect, computerSelect) {
 document.getElementById("reset").addEventListener('click', function ()
 {
      pscore=0;cscore=0;
+     document.getElementById("Pchoice").textContent=`Player Selected : `;
+     document.getElementById("Cchoice").textContent=`Computer Selected : `;
+     document.getElementById("player-score").textContent=`Player Score :`;
+     document.getElementById("comp-score").textContent=`Computer Score :`;
      document.getElementById("final-result").textContent="The Winner Is : ";
-     document.getElementById("final-result").textContent="The Winner Is : ";
-     document.getElementById("player-score").textContent=`Player Score : ${pscore}`;
-     document.getElementById("comp-score").textContent=`Computer Score : ${cscore}`;
+     
 }); 
 
 
