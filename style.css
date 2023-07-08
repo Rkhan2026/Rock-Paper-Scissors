@@ -1,4 +1,8 @@
 body {
     background-image: url('backimg.jpg');
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
