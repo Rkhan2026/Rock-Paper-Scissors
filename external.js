@@ -40,9 +40,15 @@ function playRound(playerSelect, computerSelect) {
         document.getElementById("comp-score").textContent=`Computer Score : ${cscore}`;
         if (pscore==5) {
             document.getElementById("final-result").textContent="The Winner Is : Player";
+            document.getElementById("rock").removeEventListener('click', roc);
+            document.getElementById("paper").removeEventListener('click', pap);
+            document.getElementById("scissors").removeEventListener('click', sci);
         } else if (cscore==5) {
             document.getElementById("final-result").textContent="The Winner Is : Computer";
-        }
+            document.getElementById("rock").removeEventListener('click', roc);
+            document.getElementById("paper").removeEventListener('click', pap);
+            document.getElementById("scissors").removeEventListener('click', sci);
+        }   
 
         
 }
@@ -53,25 +59,29 @@ document.getElementById("reset").addEventListener('click', function ()
      pscore=0;cscore=0;
      document.getElementById("Pchoice").textContent=`Player Selected : `;
      document.getElementById("Cchoice").textContent=`Computer Selected : `;
-     document.getElementById("player-score").textContent=`Player Score :`;
-     document.getElementById("comp-score").textContent=`Computer Score :`;
+     document.getElementById("player-score").textContent=`Player Score : ${pscore}`;
+     document.getElementById("comp-score").textContent=`Computer Score : ${cscore}`;
      document.getElementById("final-result").textContent="The Winner Is : ";
-     
+     document.getElementById("rock").addEventListener('click', roc);
+     document.getElementById("paper").addEventListener('click', pap);
+     document.getElementById("scissors").addEventListener('click', sci);  
 }); 
 
-
-document.getElementById("rock").addEventListener('click', function ()
-{
+function roc(){
      playRound("rock", getComputerChoice());
-}); 
+}; 
 
-document.getElementById("paper").addEventListener('click', function ()
-{
+function pap(){
     playRound("paper", getComputerChoice());
-}); 
+};
 
-document.getElementById("scissors").addEventListener('click', function () 
-{
+function sci() {
     playRound("scissors", getComputerChoice());
-});  
+};  
+
+document.getElementById("rock").addEventListener('click', roc);
+
+document.getElementById("paper").addEventListener('click', pap);
+
+document.getElementById("scissors").addEventListener('click', sci);
 
